@@ -16,11 +16,11 @@
 use rand::distributions::{Standard, Distribution};
 use rand::Rng;
 use num_traits::{cast, NumCast};
-use std::fmt;
-use std::iter;
-use std::mem;
-use std::ops::*;
-use std::ptr;
+use core::fmt;
+use core::iter;
+use core::mem;
+use core::ops::*;
+use core::ptr;
 
 use structure::*;
 

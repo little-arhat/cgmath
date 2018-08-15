@@ -18,9 +18,9 @@
 //! not have a fixed position.
 
 use num_traits::{Bounded, NumCast};
-use std::fmt;
-use std::mem;
-use std::ops::*;
+use core::fmt;
+use core::mem;
+use core::ops::*;
 
 use structure::*;
 

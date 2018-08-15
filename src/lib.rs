@@ -49,8 +49,9 @@
 //! ```rust
 //! use cgmath::prelude::*;
 //! ```
-
+#![no_std]
 #![cfg_attr(feature = "simd", feature(specialization))]
+#![cfg_attr(feature = "std", feature(specialization))]
 
 #[macro_use]
 extern crate approx;

@@ -13,9 +13,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use std::iter;
-use std::mem;
-use std::ops::*;
+use core::iter;
+use core::mem;
+use core::ops::*;
 
 use rand::distributions::{Distribution, Standard};
 use rand::Rng;

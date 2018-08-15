@@ -15,10 +15,14 @@
 
 //! Generic algebraic structures
 
-use num_traits::{cast, Float};
-use std::cmp;
-use std::iter;
-use std::ops::*;
+use num_traits::cast;
+#[cfg(feature = "std")]
+use num_traits::float::Float;
+#[cfg(not(feature = "std"))]
+use num_traits::float::FloatCore as Float;
+use core::cmp;
+use core::iter;
+use core::ops::*;
 
 use approx;
 
@@ -72,7 +76,7 @@ where
     /// Swap the elements at indices `i` and `j` in-place.
     #[inline]
     fn swap_elements(&mut self, i: usize, j: usize) {
-        use std::ptr;
+        use core::ptr;
 
         // Yeah, ok borrow checker – I know what I'm doing here
         unsafe { ptr::swap(&mut self[i], &mut self[j]) };
@@ -460,7 +464,7 @@ where
     /// Replace a column in the array.
     #[inline]
     fn replace_col(&mut self, c: usize, src: Self::Column) -> Self::Column {
-        use std::mem;
+        use core::mem;
 
         mem::replace(&mut self[c], src)
     }

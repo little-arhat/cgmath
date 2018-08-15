@@ -13,9 +13,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use std::fmt;
-use std::iter;
-use std::ops::*;
+use core::fmt;
+use core::iter;
+use core::ops::*;
 
 use structure::*;
 
@@ -110,13 +110,13 @@ pub trait Rotation3<S: BaseFloat>
 /// angle. We can accomplish this quite easily with a two-dimensional rotation
 /// matrix:
 ///
-/// ```no_run
+/// ```ignore
 /// use cgmath::Rad;
 /// use cgmath::Vector2;
 /// use cgmath::{Matrix, Matrix2};
 /// use cgmath::{Rotation, Rotation2, Basis2};
 /// use cgmath::UlpsEq;
-/// use std::f64;
+/// use core::f64;
 ///
 /// // For simplicity, we will rotate the unit x vector to the unit y vector --
 /// // so the angle is 90 degrees, or π/2.

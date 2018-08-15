@@ -255,8 +255,8 @@ mod serde_de {
     use structure::VectorSpace;
     use super::Decomposed;
     use serde::{self, Deserialize};
-    use std::marker::PhantomData;
-    use std::fmt;
+    use core::marker::PhantomData;
+    use core::fmt;
 
     enum DecomposedField {
         Scale,

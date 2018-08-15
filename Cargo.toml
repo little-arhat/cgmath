@@ -17,14 +17,16 @@ keywords = ["gamedev", "math", "matrix", "vector", "quaternion"]
 name = "cgmath"
 
 [features]
+default = ["std"]
 unstable = []
 swizzle = []
+std = ["rand/std", "num-traits/std", "approx/std" ]
 
 [dependencies]
-approx = "0.2"
+approx = { version = "0.2", default_features = false }
 mint = { version = "0.5", optional = true }
-num-traits = "0.2"
-rand = "0.5"
+num-traits = {version = "0.2", default_features = false }
+rand = { version = "0.5", default_features = false }
 serde = { version = "1.0", features = ["serde_derive"], optional = true }
 simd = { version = "0.2", optional = true }
 

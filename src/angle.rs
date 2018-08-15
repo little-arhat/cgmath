@@ -15,10 +15,10 @@
 
 //! Angle units for type-safe, self-documenting code.
 
-use std::fmt;
-use std::f64;
-use std::iter;
-use std::ops::*;
+use core::fmt;
+use core::f64;
+use core::iter;
+use core::ops::*;
 
 use rand::Rng;
 use rand::distributions::{Distribution, Standard};
@@ -208,8 +208,8 @@ macro_rules! impl_angle {
                 S::ulps_eq(&self.0, &other.0, epsilon, max_ulps)
             }
         }
-    
-        impl<S> Distribution<$Angle<S>> for Standard 
+
+        impl<S> Distribution<$Angle<S>> for Standard
             where Standard: Distribution<S>,
                 S: BaseFloat + SampleUniform {
             #[inline]

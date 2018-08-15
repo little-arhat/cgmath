@@ -15,10 +15,15 @@
 
 use approx;
 
-use std::fmt;
-use std::ops::*;
+use core::fmt;
+use core::ops::*;
 
-use num_traits::{Float, Num, NumCast};
+use num_traits::{Num, NumCast};
+#[cfg(feature = "std")]
+use num_traits::float::Float;
+#[cfg(not(feature = "std"))]
+use num_traits::float::FloatCore as Float;
+
 
 /// Base numeric types with partial ordering
 pub trait BaseNum:
